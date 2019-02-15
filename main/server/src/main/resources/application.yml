@@ -1,0 +1,25 @@
+#使用8761端口
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: localhost
+  server:
+    #自我保护模式关闭，
+    enable-self-preservation: false
+    #修改检查失效时间为3秒，默认为90秒
+    eviction-interval-timer-in-ms: 3000
+  client:
+    #下面两个false说明自己是一个 Eureka Server
+    registerWithEureka: false
+    fetchRegistry: false
+    #服务中心的地址
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+#此服务器名称
+spring:
+  application:
+    name: eurka-server
+
