@@ -9,8 +9,16 @@ public class IndexController {
     @Value("${label}")
     private String label;
 
+    @Value("${eurka-server}")
+    private String eurkaServer;
+
     @RequestMapping("/hello")
     public String test() {
         return label;
+    }
+
+    @RequestMapping("/server-port")
+    public String test2() {
+        return eurkaServer;
     }
 }
