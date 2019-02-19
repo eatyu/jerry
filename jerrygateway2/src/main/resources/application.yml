@@ -1,0 +1,29 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: jerry-gateway-2
+  profiles:
+    active: after_route
+
+
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: header_route
+        uri: http://localhost:8761
+        predicates:
+        - Header=xinyang, \w+
+      - id: query_route
+        uri: http://www.baidu.com/s?wd=china
+        predicates:
+        - Query=serach
+      - id: after_route
+        uri: http://httpbin.org:80/get
+        predicates:
+        - After=2018-01-20T17:42:47.789-07:00[America/Denver]
+
+  profiles: after_route
+
