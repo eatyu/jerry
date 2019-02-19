@@ -14,5 +14,5 @@ spring:
 
 #开启熔断功能
 feign:
-      hystrix:
+  hystrix:
         enabled: true

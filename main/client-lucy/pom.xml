@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>service-zipkin-hi</artifactId>
+    <artifactId>client-lucy</artifactId>
 
     <dependencies>
         <dependency>
@@ -17,11 +17,6 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!--链路追踪-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-zipkin</artifactId>
-        </dependency>
 
         <!--注册中心-->
         <dependency>
@@ -43,9 +38,5 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
         </dependency>
-
-
     </dependencies>
-
-
 </project>
