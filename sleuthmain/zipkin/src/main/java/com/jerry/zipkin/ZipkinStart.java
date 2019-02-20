@@ -1,14 +1,13 @@
-package com.safesoft.zipkin;
+package com.jerry.zipkin;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import zipkin.server.EnableZipkinServer;
 
-@SpringBootApplication
 @EnableZipkinServer
-public class ServerZipkin {
-
+@SpringBootApplication
+public class ZipkinStart {
     public static void main(String[] args) {
-        SpringApplication.run(ServerZipkin.class, args);
+        SpringApplication.run(ZipkinStart.class, args);
     }
 }

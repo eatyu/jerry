@@ -1,0 +1,13 @@
+#使用9411端口
+server:
+  port: 9411
+
+spring:
+  application:
+    name: service-zipkin
+
+management:
+  metrics:
+    web:
+      server:
+        auto-time-requests: false
