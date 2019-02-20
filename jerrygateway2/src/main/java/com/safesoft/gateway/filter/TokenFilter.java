@@ -1,8 +1,7 @@
 package com.safesoft.gateway.filter;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
-import com.safesoft.gateway.entity.NoTokenReturnEntity;
+import com.safesoft.gateway.entity.TokenErrorReturnEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
@@ -30,14 +29,13 @@ public class TokenFilter implements GlobalFilter, Ordered {
      */
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
-        String token = exchange.getRequest().getQueryParams().getFirst("token");
-        if (token == null || token.isEmpty()) {
-            logger.info( "token is empty..." );
+        String token = exchange.getRequest().getHeaders().getFirst("token");
+        if (token != null&&token.equals("3")) {
+//            logger.info( "token is empty..." );
 //            byte[] bytes = "{\"status\":\"-1\",\"msg\":\"error\"}".getBytes(StandardCharsets.UTF_8);
 
-            NoTokenReturnEntity entity = new NoTokenReturnEntity();
+            TokenErrorReturnEntity entity = new TokenErrorReturnEntity();
             byte[] bytes =JSON.toJSONString(entity).getBytes(StandardCharsets.UTF_8);
-
             DataBuffer buffer = exchange.getResponse().bufferFactory().wrap(bytes);
             exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
             return exchange.getResponse().writeWith(Flux.just(buffer));
