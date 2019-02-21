@@ -1,4 +1,4 @@
-package com.jerry.user;
+package com.jerry.order;
 
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
@@ -9,16 +9,13 @@ import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.converter.HttpMessageConverter;
-import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @EnableEurekaClient
-public class UserStart {
-
+public class OrderStart {
     public static void main(String[] args) {
-        SpringApplication.run(UserStart.class, args);
+        SpringApplication.run(OrderStart.class, args);
     }
-
 
     /**
      * Springboot 使用fastjson需要替换默认的json转换器的
@@ -32,5 +29,4 @@ public class UserStart {
         HttpMessageConverter<?> converter = fastConverter;
         return new HttpMessageConverters(converter);
     }
-
 }

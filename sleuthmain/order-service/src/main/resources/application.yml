@@ -1,0 +1,18 @@
+
+#当前项目部署的端口
+server:
+  port: 8082
+
+#配置注册中心的位置，并把自己注册进去
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+#当前项目名字
+spring:
+  application:
+    name: service-order
+  #链路追踪
+  zipkin:
+    base-url: http://localhost:9411

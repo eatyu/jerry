@@ -12,6 +12,9 @@
         <module>zipkin</module>
         <module>eureka</module>
         <module>user-service</module>
+        <module>order-service</module>
+        <module>acc-service</module>
+        <module>interface</module>
     </modules>
 
 
