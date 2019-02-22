@@ -15,6 +15,7 @@
         <module>order-service</module>
         <module>acc-service</module>
         <module>interface</module>
+        <module>facade</module>
     </modules>
 
 

@@ -1,4 +1,4 @@
-package com.inter.user.vo;
+package com.inter.user.dto;
 
 import lombok.Data;
 
