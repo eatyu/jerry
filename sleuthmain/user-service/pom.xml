@@ -13,7 +13,6 @@
 
 
     <properties>
-        <jerry.order.version>1.0-SNAPSHOT</jerry.order.version>
         <jerry.interface.version>1.0-SNAPSHOT</jerry.interface.version>
     </properties>
 
