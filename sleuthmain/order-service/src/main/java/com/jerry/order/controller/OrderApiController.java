@@ -22,6 +22,7 @@ public class OrderApiController implements OrderApi {
             dto.setName("物品" + i);
             dto.setPrice(i * 1000 + 1);
             dto.setOrderId(new BigInteger("" + i));
+            orderDtos.add(dto);
         }
         return orderDtos;
     }

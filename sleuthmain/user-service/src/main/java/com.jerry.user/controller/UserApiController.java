@@ -23,7 +23,7 @@ public class UserApiController implements UserApi {
         UserDto user = new UserDto();
         user.setName("jerry");
         user.setUserId(new BigInteger("1"));
-        return null;
+        return user;
     }
 
 }
