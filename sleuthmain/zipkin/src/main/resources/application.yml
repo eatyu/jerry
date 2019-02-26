@@ -1,13 +1,25 @@
-#使用9411端口
 server:
   port: 9411
-
 spring:
   application:
-    name: service-zipkin
+    name: zipkin-server
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/sleuthmain?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: root
+    initialize: true
+    continueOnError: true
+sleuth:
+    enabled: false
+zipkin:
+  storage:
+    type: mysql
 
 management:
   metrics:
     web:
       server:
         auto-time-requests: false
+
